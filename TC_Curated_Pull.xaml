@@ -1,0 +1,2005 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_Curated_Pull" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1137,1047" sap2010:WorkflowViewState.IdRef="TC_Curated_Pull_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ugia="clr-namespace:UiPath.GitHub.IntegrationService.Activities;assembly=UiPath.GitHub.IntegrationService.Activities" xmlns:ugic="clr-namespace:UiPath.GitHub.IntegrationService.Client;assembly=UiPath.GitHub.IntegrationService" xmlns:uibi="http://schemas.uipath.com/workflow/infrastructure/baf/uibi" xmlns:uiisi="http://schemas.uipath.com/workflow/infrastructure/is/uiisi" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Contracts</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Connection</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Telemetry</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.GitHub.IntegrationService.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Entity</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Enums</x:String>
+      <x:String>UiPath.BAF.Infrastructure</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.BAF.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.GitHub.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC_Curated_Pull" sap:VirtualizedContainerService.HintSize="452,982" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ugia:Scope ConnectionId="1f8c1cbb-06fe-ec11-b47a-e42aac66b6cd" Connector="uipath-microsoft-github" DesignConnectionEnabled="True" DisplayName="GitHub Scope" sap:VirtualizedContainerService.HintSize="410,880" sap2010:WorkflowViewState.IdRef="Scope_1" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
+      <ugia:Scope.Body>
+        <ActivityAction x:TypeArguments="uibi:IScopeActivityContext">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="uibi:IScopeActivityContext" Name="ScopeActivityContext" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,759" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:Nullable(x:Int32)" Name="issueNo" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ugia:CreatePull ConfiguredBusinessEntity="pulls" Connector="uipath-microsoft-github" CrudOperation="Create" DesignConnectionEnabled="True" DisplayName="Create pull request" sap:VirtualizedContainerService.HintSize="334,546" sap2010:WorkflowViewState.IdRef="CreatePull_1" UseConnectionService="True">
+              <ugia:CreatePull.BusinessEntity>
+                <uibi:BusinessEntity Metadata="{x:Reference __ReferenceID10}" Name="pulls">
+                  <uibi:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="uibi:EntityField" Capacity="16">
+                      <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" ArgumentDirection="Out" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" Description="Number uniquely identifying the pull request within its repository." DisplayName="Number" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="True" IsIdField="True" IsMandatory="False" IsSelected="False" Location="Undefined" Name="Response.Number" ShouldFilterOnChange="False" />
+                      <uiisi:OperationEntityField x:TypeArguments="ugic:Pulls" ArgumentDirection="In" ArgumentType="ugic:Pulls" DataType="Pulls" Description="The Pulls object." DisplayName="Pulls" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="True" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="body" ShouldFilterOnChange="False" />
+                      <x:Reference>__ReferenceID0</x:Reference>
+                      <uiisi:OperationEntityField x:TypeArguments="ugic:Pulls" ArgumentDirection="Out" ArgumentType="ugic:Pulls" DataType="Pulls" Description="The Pulls object returned." DisplayName="Pulls" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="True" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="Response" ShouldFilterOnChange="False" />
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                      <x:Reference>__ReferenceID3</x:Reference>
+                      <x:Reference>__ReferenceID4</x:Reference>
+                      <x:Reference>__ReferenceID5</x:Reference>
+                      <x:Reference>__ReferenceID6</x:Reference>
+                      <x:Reference>__ReferenceID7</x:Reference>
+                      <x:Reference>__ReferenceID8</x:Reference>
+                      <x:Reference>__ReferenceID9</x:Reference>
+                    </scg:List>
+                  </uibi:BusinessEntity.AllFields>
+                  <uibi:BusinessEntity.EntityMetadata>
+                    <uibi:EntityMetadata DisplayName="Pulls" EligibleOperations="1" IsCustomEntity="False" Name="pulls">
+                      <uibi:EntityMetadata.Metadata>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID10">
+                          <x:String x:Key="Object">pulls</x:String>
+                          <x:String x:Key="Client">UiPath.GitHub.IntegrationService.Client.PullsAPIClient</x:String>
+                          <x:String x:Key="Operation">CreatePull</x:String>
+                          <x:String x:Key="Path">/{repo}/pulls</x:String>
+                        </scg:Dictionary>
+                      </uibi:EntityMetadata.Metadata>
+                    </uibi:EntityMetadata>
+                  </uibi:BusinessEntity.EntityMetadata>
+                  <uibi:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="uibi:EntityField" Capacity="16">
+                      <x:Reference>__ReferenceID0</x:Reference>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                      <x:Reference>__ReferenceID3</x:Reference>
+                      <x:Reference>__ReferenceID4</x:Reference>
+                      <x:Reference>__ReferenceID5</x:Reference>
+                      <x:Reference>__ReferenceID6</x:Reference>
+                      <x:Reference>__ReferenceID7</x:Reference>
+                      <x:Reference>__ReferenceID8</x:Reference>
+                      <x:Reference>__ReferenceID9</x:Reference>
+                    </scg:List>
+                  </uibi:BusinessEntity.SelectedFields>
+                  <uibi:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </uibi:BusinessEntity.TelemetryProperties>
+                </uibi:BusinessEntity>
+              </ugia:CreatePull.BusinessEntity>
+              <ugia:CreatePull.DesignConnectionRequest>
+                <uiisi:ConnectionParameters AuthType="ElementInstance">
+                  <uiisi:ConnectionParameters.ClientInfo>
+                    <uiisi:ClientInfo ClientAssembly="UiPath.GitHub.IntegrationService" ClientNamespace="UiPath.GitHub.IntegrationService">
+                      <uiisi:ClientInfo.ConnectorMetadata>
+                        <uiisi:ConnectorMetadata Lookups="{x:Null}" x:Name="__ReferenceID11" HasDiscoveryAPI="False" Key="uipath-microsoft-github" Version="2.0.0">
+                          <uiisi:ConnectorMetadata.ActivitiesSettings>
+                            <scg:Dictionary x:TypeArguments="x:String, uiisi:ActivitySettings">
+                              <uiisi:ActivitySettings x:Key="GetRecord" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="InsertRecord" EnableSampleValues="False" EnableSampleValuesTest="True" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="UpdateRecord" EnableSampleValues="False" EnableSampleValuesTest="True" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="InvokeMethod" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                                    <x:String>download_file</x:String>
+                                    <x:String>upload_file</x:String>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="UploadFile" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repo name" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The file or directory path." DisplayName="Path" FieldName="path" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="JSON containing message, content and sha in case of file update in string format." DisplayName="Request Body" FieldName="BodyFormData" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output blob SHA of the file uploaded." DisplayName="File SHA" FieldName="Response.content.sha" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output URL of the file uploaded." DisplayName="File URL" FieldName="Response.content.url" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="DownloadFile" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repo name" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The complete path of the file from the root." DisplayName="Path" FieldName="path" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the commit or branch or tag. Default value would be the repository's default branch usually &quot;master&quot;." DisplayName="Reference" FieldName="_ref" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="DeleteFile" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repo name" FieldName="body.repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The file or directory path." DisplayName="Path" FieldName="body.path" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The commit message." DisplayName="Message" FieldName="body.message" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The blob SHA of the file being replaced." DisplayName="Sha" FieldName="body.sha" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the committer of the commit." DisplayName="Committer name" FieldName="body.committer.name" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The email of the committer of the commit." DisplayName="Committer email" FieldName="body.committer.email" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="CreateRepo" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="16">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Name" FieldName="body.name" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="A short description of the repository." DisplayName="Description" FieldName="body.description" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Whether the repository is private. Default is false." DisplayName="Private" FieldName="body.private" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Can be public or private." DisplayName="Visibility" FieldName="body.visibility" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization." DisplayName="Team ID" FieldName="body.team_id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="A URL with more information about the repository." DisplayName="Homepage" FieldName="body.homepage" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Pass true to create an initial commit with empty README. Default is false." DisplayName="Auto Init" FieldName="body.auto_init" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to allow auto-merge on pull requests, or false to disallow auto-merge. Default is false." DisplayName="Allow auto merge" FieldName="body.allow_auto_merge" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to allow automatically deleting head branches when pull requests are merged, or false to prevent automatic deletion. Default is false." DisplayName="Delete branch on merge" FieldName="body.delete_branch_on_merge" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to make this repo available as a template repository or false to prevent it. Default is false." DisplayName="Is template" FieldName="body.is_template" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Desired language or platform .gitignore template to apply. Use the name of the template without the extension. For example, &quot;Haskell&quot;." DisplayName="Gitignore template" FieldName="body.gitignore_template" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Choose an open source license template that best suits your needs, and then use the license keyword as the license_template string. For example, &quot;mit&quot; or &quot;mpl-2.0&quot;" DisplayName="License template" FieldName="body.license_template" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output repo ID." DisplayName="Repo ID" FieldName="Response.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output repo name." DisplayName="Repo name" FieldName="Response.name" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="UpdateRepo" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="16">
+                                    <uiisi:ActivityProperty Description="The name of the repository. The name is not case sensitive." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Name" FieldName="body.name" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="A short description of the repository." DisplayName="Description" FieldName="body.description" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Whether the repository is private. Default is false." DisplayName="Private" FieldName="body.private" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Can be public or private." DisplayName="Visibility" FieldName="body.visibility" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Updates the default branch for this repository." DisplayName="Default branch" FieldName="body.default_branch" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="A URL with more information about the repository." DisplayName="Homepage" FieldName="body.homepage" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise. Default is false." DisplayName="Allow update branch" FieldName="body.allow_update_branch" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to allow auto-merge on pull requests, or false to disallow auto-merge. Default is false." DisplayName="Allow auto merge" FieldName="body.allow_auto_merge" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to allow automatically deleting head branches when pull requests are merged, or false to prevent automatic deletion. Default is false." DisplayName="Delete branch on merge" FieldName="body.delete_branch_on_merge" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to make this repo available as a template repository or false to prevent it. Default is false." DisplayName="Is template" FieldName="body.is_template" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Provide &quot;true&quot; to archive this repository. You cannot unarchive repositories through the API." DisplayName="Archived" FieldName="body.archived" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Either true to allow private forks, or false to prevent private forks. Default is false." DisplayName="Allow forking" FieldName="body.allow_forking" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="SearchRepos" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="CreatePull" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="16">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the branch where your changes are implemented." DisplayName="Head" FieldName="body.head.ref" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository." DisplayName="Base" FieldName="body.base.ref" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The title of the new pull request." DisplayName="Title" FieldName="body.title" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The contents of the pull request." DisplayName="Body" FieldName="body.body" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Indicates whether maintainers can modify the pull request." DisplayName="Maintainer can modify" FieldName="body.maintainer_can_modify" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Indicates whether the pull request is a draft." DisplayName="Draft" FieldName="body.draft" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The issue number." DisplayName="Issue" FieldName="body.issue" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output pull request ID." DisplayName="Pull request ID" FieldName="Response.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output pull request number." DisplayName="Pull request number" FieldName="Response.number" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="UpdatePull" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number that identifies the pull request." DisplayName="Pull number" FieldName="pull_number" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository." DisplayName="Base" FieldName="body.base.ref" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The title of the new pull request." DisplayName="Title" FieldName="body.title" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The contents of the pull request." DisplayName="Body" FieldName="body.body" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Indicates whether maintainers can modify the pull request." DisplayName="Maintainer can modify" FieldName="body.maintainer_can_modify" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="State of this Pull Request. Either open or closed." DisplayName="State" FieldName="body.state" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="MergePull" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number that identifies the pull request." DisplayName="Pull number" FieldName="pull_number" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Title for the automatic commit message." DisplayName="Commit title" FieldName="body.commit_title" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Extra detail to append to automatic commit message." DisplayName="Commit message" FieldName="body.commit_message" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="SHA that pull request head must match to allow merge." DisplayName="Sha" FieldName="body.sha" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Merge method to use. Possible values are merge, squash or rebase. Default is merge." DisplayName="Merge method" FieldName="body.merge_method" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="CreateIssue" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="A title of the repository." DisplayName="Title" FieldName="body.title" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Login for the user that this issue should be assigned to." DisplayName="Assignee" FieldName="body.assignee.login" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The contents of the issue." DisplayName="Body" FieldName="body.body" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number of the milestone to associate this issue with.  &quot;Push&quot; access is needed for setting milestone." DisplayName="Milestone" FieldName="body.milestone.number" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output issue ID." DisplayName="Issue ID" FieldName="Response.id" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output issue number." DisplayName="Issue number" FieldName="Response.number" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="UpdateIssue" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number that identifies the issue." DisplayName="Issue number" FieldName="issue_number" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="A title of the repository." DisplayName="Title" FieldName="body.title" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="Login for the user that this issue should be assigned to." DisplayName="Assignee" FieldName="body.assignee.login" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The contents of the issue." DisplayName="Body" FieldName="body.body" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="State of the issue. Either open or closed." DisplayName="State" FieldName="body.state" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number of the milestone to associate this issue with.  &quot;Push&quot; access is needed for setting milestone." DisplayName="Milestone" FieldName="body.milestone.number" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="SearchIssues" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="GetIssue" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number that identifies the issue." DisplayName="Issue number" FieldName="issue_number" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output issue object." DisplayName="Issue" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="GetPull" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The number that identifies the pull request." DisplayName="Pull number" FieldName="pull_number" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output pull request object." DisplayName="Pull Request" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="GetRepo" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output repository object." DisplayName="Repository" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="DeleteRepo" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="ListAllIssues" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="ListAllPulls" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="ListAllRepos" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="CreateBranch" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="8">
+                                    <uiisi:ActivityProperty Description="The name of the repository." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the fully qualified reference i.e. &quot;refs/heads/master&quot;. If it doesn't start with 'refs' and have at least two slashes, it will be rejected." DisplayName="Reference" FieldName="body.ref" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The SHA1 value for the repository on which the branch will be created." DisplayName="SHA" FieldName="body.sha" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output SHA of the created branch." DisplayName="Branch SHA" FieldName="Response.object.sha" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output Ref of the created branch." DisplayName="Branch Reference" FieldName="Response.ref" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="ListAllReferences" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="False">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="0" />
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="DeleteBranch" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository. The name is not case sensitive." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the fully qualified reference i.e. &quot;refs/heads/master&quot;. If it doesn't start with 'refs' and have at least two slashes, it will be rejected." DisplayName="Reference" FieldName="_ref" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                              <uiisi:ActivitySettings x:Key="GetBranch" EnableSampleValues="False" EnableSampleValuesTest="False" ShowAllFields="True" ShowConfigureButton="True">
+                                <uiisi:ActivitySettings.ObjectsToExclude>
+                                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                                </uiisi:ActivitySettings.ObjectsToExclude>
+                                <uiisi:ActivitySettings.Properties>
+                                  <scg:List x:TypeArguments="uiisi:ActivityProperty" Capacity="4">
+                                    <uiisi:ActivityProperty Description="The name of the repository. The name is not case sensitive." DisplayName="Repository" FieldName="repo" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The name of the fully qualified reference i.e. &quot;refs/heads/master&quot;. If it doesn't start with 'refs' and have at least two slashes, it will be rejected." DisplayName="Reference" FieldName="_ref" IsHidden="False" IsRequired="True">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                    <uiisi:ActivityProperty Description="The output object of the branch." DisplayName="Branch" FieldName="Response" IsHidden="False" IsRequired="False">
+                                      <uiisi:ActivityProperty.OnValueCleared>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueCleared>
+                                      <uiisi:ActivityProperty.OnValueSet>
+                                        <scg:List x:TypeArguments="uiisi:PropertyValueChanged" Capacity="0" />
+                                      </uiisi:ActivityProperty.OnValueSet>
+                                    </uiisi:ActivityProperty>
+                                  </scg:List>
+                                </uiisi:ActivitySettings.Properties>
+                                <uiisi:ActivitySettings.PropertyCategories>
+                                  <scg:List x:TypeArguments="uiisi:PropertyCategory" Capacity="0" />
+                                </uiisi:ActivitySettings.PropertyCategories>
+                              </uiisi:ActivitySettings>
+                            </scg:Dictionary>
+                          </uiisi:ConnectorMetadata.ActivitiesSettings>
+                          <uiisi:ConnectorMetadata.GeneratedObjectMetadata>
+                            <scg:List x:TypeArguments="uiisi:ObjectMetadata" Capacity="32">
+                              <uiisi:ObjectMetadata DisplayName="Forks" Name="forks" Path="/{repo}/forks" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getForks">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getForks">/{repo}/forks</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Search repositories" Name="search_repositories" Path="/search_repositories" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getSearch_repositories">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getSearch_repositories">/search_repositories</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Branches" Name="branches" Path="/{repo}/branches" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getBranches">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getBrancheByBranch">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getBranches">/{repo}/branches</x:String>
+                                    <x:String x:Key="getBrancheByBranch">/{repo}/branches/{branch}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Name" DisplayName="Name" Name="name" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Git Refs Tags" Name="git::refs::tags" Path="/{repo}/git/refs/tags" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getGitRefsTags">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getGitRefsTagByTagName">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getGitRefsTags">/{repo}/git/refs/tags</x:String>
+                                    <x:String x:Key="getGitRefsTagByTagName">/{repo}/git/refs/tags/{tag-name}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Ref" DisplayName="Ref" Name="ref" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Merge pull request status" Name="merge_pull_request_status" Path="/{repo}/pulls/{pull_number}/merge" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getPullsMerge">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getPullsMerge">/{repo}/pulls/{pull_number}/merge</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Git Matching Refs" Name="git::matching-refs" Path="/{repo}/git/matching-refs" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getGitMatchingRefByRef">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getGitMatchingRefByRef">/{repo}/git/matching-refs/{ref}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Pulls Files" Name="pulls::files" Path="/{repo}/pulls/{pull_number}/files" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getPullsFiles">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getPullsFiles">/{repo}/pulls/{pull_number}/files</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Sha" DisplayName="Sha" Name="sha" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Download file" Name="download_file" Path="/download_file" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getDownload_file">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getDownload_file">/download_file</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Merge pull request" Name="merge_pull_request" Path="/{repo}/pulls/{pull_number}/merge" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="replacePullsMerge">PUT</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="replacePullsMerge">/{repo}/pulls/{pull_number}/merge</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Repos" Name="repos" Path="/repos" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getRepos">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createRepo">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateRepoByRepo">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteRepoByRepo">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getRepoByRepo">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getRepos">/repos</x:String>
+                                    <x:String x:Key="createRepo">/repos</x:String>
+                                    <x:String x:Key="updateRepoByRepo">/repos/{repo}</x:String>
+                                    <x:String x:Key="deleteRepoByRepo">/repos/{repo}</x:String>
+                                    <x:String x:Key="getRepoByRepo">/repos/{repo}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="The name of the repository." DisplayName="Name" Name="name" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Git Trees" Name="git::trees" Path="/{repo}/git/trees" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createGitTree">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getGitTreeByTree_sha">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createGitTree">/{repo}/git/trees</x:String>
+                                    <x:String x:Key="getGitTreeByTree_sha">/{repo}/git/trees/{tree_sha}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Sha" DisplayName="Sha" Name="sha" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Pulls" Name="pulls" Path="/{repo}/pulls" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getPulls">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createPull">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updatePullByPull_number">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getPullByPull_number">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getPulls">/{repo}/pulls</x:String>
+                                    <x:String x:Key="createPull">/{repo}/pulls</x:String>
+                                    <x:String x:Key="updatePullByPull_number">/{repo}/pulls/{pull_number}</x:String>
+                                    <x:String x:Key="getPullByPull_number">/{repo}/pulls/{pull_number}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Number uniquely identifying the pull request within its repository." DisplayName="Number" Name="number" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="User" Name="user" Path="/user" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getUser">GETBYID</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateUserByEmail">PATCH</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getUser">/user</x:String>
+                                    <x:String x:Key="updateUserByEmail">/user/{email}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Commits" Name="commits" Path="/{repo}/commits" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getCommits">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getCommitByRef">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getCommits">/{repo}/commits</x:String>
+                                    <x:String x:Key="getCommitByRef">/{repo}/commits/{ref}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Sha" DisplayName="Sha" Name="sha" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Pulls Commits" Name="pulls::commits" Path="/{repo}/pulls/{pull_number}/commits" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getPullsCommits">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getPullsCommits">/{repo}/pulls/{pull_number}/commits</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Sha" DisplayName="Sha" Name="sha" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Repository Contents" Name="repository::contents" Path="/repository/{repo}/contents" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getRepositoryContents">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getRepositoryContents">/repository/{repo}/contents</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Sha" DisplayName="Sha" Name="sha" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Git Commits" Name="git::commits" Path="/{repo}/git/commits" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createGitCommit">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getGitCommitByCommit_sha">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createGitCommit">/{repo}/git/commits</x:String>
+                                    <x:String x:Key="getGitCommitByCommit_sha">/{repo}/git/commits/{commit_sha}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="SHA for the commit" DisplayName="Sha" Name="sha" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Issues" Name="issues" Path="/{repo}/issues" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getIssues">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createIssue">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateIssueByIssue_number">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getIssueByIssue_number">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getIssues">/{repo}/issues</x:String>
+                                    <x:String x:Key="createIssue">/{repo}/issues</x:String>
+                                    <x:String x:Key="updateIssueByIssue_number">/{repo}/issues/{issue_number}</x:String>
+                                    <x:String x:Key="getIssueByIssue_number">/{repo}/issues/{issue_number}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Number uniquely identifying the issue within its repository" DisplayName="Number" Name="number" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Search issues" Name="search_issues" Path="/search_issues" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getSearch_issues">GET</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getSearch_issues">/search_issues</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Id" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Upload file" Name="upload_file" Path="/upload_file" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="replaceUpload_file">PUT</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="replaceUpload_file">/upload_file</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Git Refs" Name="git::refs" Path="/{repo}/git/refs" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getGitRefs">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createGitRef">POST</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="updateGitRefByRef">PATCH</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="deleteGitRefByRef">DELETE</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getGitRefByRef">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getGitRefs">/{repo}/git/refs</x:String>
+                                    <x:String x:Key="createGitRef">/{repo}/git/refs</x:String>
+                                    <x:String x:Key="updateGitRefByRef">/{repo}/git/refs/{ref}</x:String>
+                                    <x:String x:Key="deleteGitRefByRef">/{repo}/git/refs/{ref}</x:String>
+                                    <x:String x:Key="getGitRefByRef">/{repo}/git/refs/{ref}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected." DisplayName="Ref" Name="ref" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Compare" Name="compare" Path="/{repo}/compare" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getCompareByBasehead">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getCompareByBasehead">/{repo}/compare/{basehead}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Delete file" Name="delete_file" Path="/delete_file" SubType="Method" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="createDelete_file">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="createDelete_file">/delete_file</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="0" />
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="Users" Name="users" Path="/users" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getUsers">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="getUserByUsername">GETBYID</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getUsers">/users</x:String>
+                                    <x:String x:Key="getUserByUsername">/users/{username}</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Login" DisplayName="Login" Name="login" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                              <uiisi:ObjectMetadata DisplayName="User repos" Name="user_repos" Path="/user_repos" SubType="Standard" Type="Standard">
+                                <uiisi:ObjectMetadata.OperationIdToMethod>
+                                  <scg:Dictionary x:TypeArguments="x:String, uiisi:ResourceMethod">
+                                    <uiisi:ResourceMethod x:Key="getUser_repos">GET</uiisi:ResourceMethod>
+                                    <uiisi:ResourceMethod x:Key="createUser_repo">POST</uiisi:ResourceMethod>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToMethod>
+                                <uiisi:ObjectMetadata.OperationIdToPath>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:String">
+                                    <x:String x:Key="getUser_repos">/user_repos</x:String>
+                                    <x:String x:Key="createUser_repo">/user_repos</x:String>
+                                  </scg:Dictionary>
+                                </uiisi:ObjectMetadata.OperationIdToPath>
+                                <uiisi:ObjectMetadata.PrimaryKeys>
+                                  <scg:List x:TypeArguments="uiisi:PrimaryKey" Capacity="4">
+                                    <uiisi:PrimaryKey Description="Unique identifier of the repository" DisplayName="ID" Name="id" />
+                                  </scg:List>
+                                </uiisi:ObjectMetadata.PrimaryKeys>
+                              </uiisi:ObjectMetadata>
+                            </scg:List>
+                          </uiisi:ConnectorMetadata.GeneratedObjectMetadata>
+                          <uiisi:ConnectorMetadata.ParametersToExclude>
+                            <scg:List x:TypeArguments="x:String" Capacity="4">
+                              <x:String>Authorization</x:String>
+                            </scg:List>
+                          </uiisi:ConnectorMetadata.ParametersToExclude>
+                          <uiisi:ConnectorMetadata.RequiredFields>
+                            <scg:Dictionary x:TypeArguments="x:String, scg:List(x:String)">
+                              <scg:List x:TypeArguments="x:String" x:Key="forks: getforks" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="search_repositories: getsearch_repositories" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>q</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="branches: getbranches" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="branches: getbranchebybranch" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>branch</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs__tags: getgitrefstags" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs__tags: getgitrefstagbytagname" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>tag_name</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="merge_pull_request_status: getpullsmerge" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>pull_number</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="merge_pull_request: replacepullsmerge" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>pull_number</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__matchingrefs: getgitmatchingrefbyref" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>_ref</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="pulls__files: getpullsfiles" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>pull_number</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="download_file: getdownload_file" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>path</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="repos: getrepos" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="repos: createrepo" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="repos: getrepobyrepo" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="repos: deleterepobyrepo" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="repos: updaterepobyrepo" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__trees: creategittree" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__trees: getgittreebytree_sha" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>tree_sha</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="pulls: getpulls" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="pulls: createpull" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="pulls: getpullbypull_number" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>pull_number</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="pulls: updatepullbypull_number" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>pull_number</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="user: getuser" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="user: updateuserbyemail" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>email</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="commits: getcommits" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="commits: getcommitbyref" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>_ref</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="pulls__commits: getpullscommits" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>pull_number</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="repository__contents: getrepositorycontents" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__commits: creategitcommit" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__commits: getgitcommitbycommit_sha" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>commit_sha</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="issues: getissues" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="issues: createissue" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="issues: getissuebyissue_number" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>issue_number</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="issues: updateissuebyissue_number" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>issue_number</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="search_issues: getsearch_issues" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>q</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="upload_file: replaceupload_file" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>path</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs: getgitrefs" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs: creategitref" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs: getgitrefbyref" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>_ref</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs: deletegitrefbyref" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>_ref</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="git__refs: updategitrefbyref" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>_ref</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="compare: getcomparebybasehead" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>repo</x:String>
+                                <x:String>basehead</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="delete_file: createdelete_file" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="users: getusers" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="users: getuserbyusername" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>username</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="user_repos: getuser_repos" Capacity="4">
+                                <x:String>authorization</x:String>
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:String" x:Key="user_repos: createuser_repo" Capacity="4">
+                                <x:String>authorization</x:String>
+                                <x:String>body</x:String>
+                              </scg:List>
+                            </scg:Dictionary>
+                          </uiisi:ConnectorMetadata.RequiredFields>
+                        </uiisi:ConnectorMetadata>
+                      </uiisi:ClientInfo.ConnectorMetadata>
+                    </uiisi:ClientInfo>
+                  </uiisi:ConnectionParameters.ClientInfo>
+                  <uiisi:ConnectionParameters.TelemetryInfo>
+                    <uiisi:TelemetryInfo ActivityPack="UiPath.GitHub.IntegrationService.Activities" ActivityPackVersion="4.0.0" Source="studio" />
+                  </uiisi:ConnectionParameters.TelemetryInfo>
+                </uiisi:ConnectionParameters>
+              </ugia:CreatePull.DesignConnectionRequest>
+              <ugia:CreatePull.SelectedFields>
+                <scg:List x:TypeArguments="uibi:EntityField" Capacity="10">
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID0" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The name of the repository." DisplayName="Repository" FormDataType="ExpressionTextBox" InArgumentValue="Name238438" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="repo" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">Name238438</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID1" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The name of the branch where your changes are implemented." DisplayName="Head" FormDataType="ExpressionTextBox" InArgumentValue="branch" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="body.head.ref" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">branch</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID2" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository." DisplayName="Base" FormDataType="ExpressionTextBox" InArgumentValue="branch" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="True" IsSelected="False" Location="Undefined" Name="body.base.ref" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">branch</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID3" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The title of the new pull request." DisplayName="Title" FormDataType="ExpressionTextBox" InArgumentValue="Pull test0001" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="body.title" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">Pull test0001</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="x:String" x:Name="__ReferenceID4" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The contents of the pull request." DisplayName="Body" FormDataType="ExpressionTextBox" InArgumentValue="Testing pull request 0000111" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="body.body" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="x:String">Testing pull request 0000111</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Boolean)" x:Name="__ReferenceID5" ArgumentDirection="In" ArgumentType="s:Nullable(x:Boolean)" DataType="Boolean" Description="Indicates whether maintainers can modify the pull request." DisplayName="Maintainer can modify" FormDataType="ExpressionTextBox" InArgumentValue="[True]" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="body.maintainer_can_modify" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="s:Nullable(x:Boolean)">[True]</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Boolean)" x:Name="__ReferenceID6" ArgumentDirection="In" ArgumentType="s:Nullable(x:Boolean)" DataType="Boolean" Description="Indicates whether the pull request is a draft." DisplayName="Draft" FormDataType="ExpressionTextBox" InArgumentValue="[False]" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="body.draft" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="s:Nullable(x:Boolean)">[False]</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID7" ArgumentDirection="In" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" Description="The issue number." DisplayName="Issue" FormDataType="ExpressionTextBox" InArgumentValue="[issueNo]" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="body.issue" ShouldFilterOnChange="False">
+                    <uiisi:OperationEntityField.ArgumentValue>
+                      <InArgument x:TypeArguments="s:Nullable(x:Int32)">[issueNo]</InArgument>
+                    </uiisi:OperationEntityField.ArgumentValue>
+                  </uiisi:OperationEntityField>
+                  <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID8" ArgumentDirection="Out" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" Description="The output pull request ID." DisplayName="Pull request ID" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="Response.id" ShouldFilterOnChange="False" />
+                  <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID9" ArgumentDirection="Out" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" Description="The output pull request number." DisplayName="Pull request number" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsSelected="False" Location="Undefined" Name="Response.number" ShouldFilterOnChange="False" />
+                </scg:List>
+              </ugia:CreatePull.SelectedFields>
+              <ugia:CreatePull.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </ugia:CreatePull.TelemetryProperties>
+            </ugia:CreatePull>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,71" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[issueNo.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </ugia:Scope.Body>
+      <ugia:Scope.DesignConnectionRequest>
+        <uiisi:ConnectionParameters AuthType="ElementInstance" ConnectionId="1f8c1cbb-06fe-ec11-b47a-e42aac66b6cd" ConnectionName="cedeveloper">
+          <uiisi:ConnectionParameters.ClientInfo>
+            <uiisi:ClientInfo ConnectorMetadata="{x:Reference __ReferenceID11}" ClientAssembly="UiPath.GitHub.IntegrationService" ClientNamespace="UiPath.GitHub.IntegrationService" />
+          </uiisi:ConnectionParameters.ClientInfo>
+          <uiisi:ConnectionParameters.TelemetryInfo>
+            <uiisi:TelemetryInfo ActivityPack="UiPath.GitHub.IntegrationService.Activities" ActivityPackVersion="4.0.0" Source="studio" />
+          </uiisi:ConnectionParameters.TelemetryInfo>
+        </uiisi:ConnectionParameters>
+      </ugia:Scope.DesignConnectionRequest>
+      <ugia:Scope.TelemetryProperties>
+        <scg:Dictionary x:TypeArguments="uibi:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+      </ugia:Scope.TelemetryProperties>
+    </ugia:Scope>
+  </Sequence>
+</Activity>
